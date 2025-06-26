@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | GaadiMandi.in</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    background: linear-gradient(135deg, #1a3e72, #0a1f3d);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Info Boxes */
+.info-box {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 4px solid #e74c3c;
+    background: #f8f9fa;
+}
+
+.info-box i {
+    font-size: 1.5rem;
+    color: #e74c3c;
+    margin-bottom: 0.5rem;
+}
+
+.info-box h3 {
+    margin: 0.5rem 0;
+    color: #1a3e72;
+}
+
+.info-box a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form Styling */
+.contact-form h2 {
+    color: #1a3e72;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #c0392b;
+}
+
+/* Map Section */
+.map-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.map-section h2 {
+    color: #1a3e72;
+}
+
+.map-container {
+    margin-top: 1rem;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Social Footer */
+.social-footer {
+    background: #1a3e72;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.social-icons {
+    margin: 1rem 0;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e74c3c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Get In Touch With Us</h1>
+        <p>Have questions about buying or selling trucks? Reach out to us—we're here to help!</p>
+    </header>
+
+    <main class="contact-container">
+        <!-- Contact Information Section -->
+        <section class="contact-info">
+            <h2>Contact Details</h2>
+            <div class="info-box">
+                <i class="fas fa-user"></i>
+                <h3>Ranbir Singh Dahiya</h3>
+                <p>Your trusted contact for all inquiries.</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-phone"></i>
+                <h3>Call Us</h3>
+                <p><a href="tel:+918708503491">+91 8708503491</a></p>
+                <p><strong>Call now for fast deals!</strong></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918708503491">Chat on WhatsApp</a></p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us</h3>
+                <p><a href="mailto:thedevilghost69@gmail.com">thedevilghost69@gmail.com</a></p>
+                <p>For detailed inquiries, documentation, or support.</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Our Location</h3>
+                <p>Sonipat, Haryana, India</p>
+                <p><em>Serving clients across India.</em></p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-clock"></i>
+                <h3>Business Hours</h3>
+                <p>Monday - Saturday: 9:00 AM - 6:00 PM IST</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject*</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select an option</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="buy">Buy a Truck</option>
+                        <option value="sell">Sell a Truck</option>
+                        <option value="support">Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message*</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Google Maps Embed (Optional) -->
+    <section class="map-section">
+        <h2>Find Us on the Map</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56062.10276406359!2d77.00288045!3d28.9932065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b294017e7c3%3A0x97198dd867531f9e!2sSonipat%2C%20Haryana!5e0!3m2!1sen!2sin!4v1719391234567" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Social Media Links -->
+    <footer class="social-footer">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 DAHIYA Truck-Bazar.in. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Form Submission Handling
+    const contactForm = document.querySelector('.contact-form form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const formObject = Object.fromEntries(formData.entries());
+            
+            // Simple validation (you can enhance this)
+            if (!formObject.name || !formObject.email || !formObject.phone || !formObject.subject || !formObject.message) {
+                alert('Please fill all required fields!');
+                return;
+            }
+            
+            // Simulate form submission (replace with actual AJAX/fetch to backend)
+            console.log('Form submitted:', formObject);
+            
+            // Show success message
+            alert('Thank you! Your message has been sent. We will contact you soon.');
+            contactForm.reset(); // Clear form
+        });
+    }
+
+    // WhatsApp Click Tracking (optional)
+    const whatsappLink = document.querySelector('a[href*="whatsapp"]');
+    if (whatsappLink) {
+        whatsappLink.addEventListener('click', function() {
+            console.log('WhatsApp clicked'); // Can be replaced with analytics tracking
+        });
+    }
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAHIYA Truck Bazar | Buy & Sell Commercial Vehicles in Delhi-NCR</title>
+    <meta name="description" content="India's trusted marketplace for buying and selling second-hand trucks and commercial vehicles. Best prices for Tata, Ashok Leyland, Mahindra, Eicher, and BharatBenz trucks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #1a4b8c;
+            --accent-red: #cc0000;
+            --steel-grey: #4d4d4d;
+            --light-grey: #f2f2f2;
+            --highlight: #ffcc00;
+            --success-green: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-red);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--highlight);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .cart-icon {
+            position: relative;
+            margin-left: 20px;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://c8.alamy.com/comp/G07PW8/truck-in-india-G07PW8.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-red);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-blue);
+        }
+        
+        /* Truck Brands Section */
+        .brands {
+            padding: 80px 0;
+            background-color: var(--light-grey);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+        
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .brand-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .brand-logo {
+            height: 80px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .brand-logo img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        /* Truck Listings */
+        .listings {
+            padding: 80px 0;
+        }
+        
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-group select, .filter-group input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .truck-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .truck-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .truck-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            z-index: 2;
+        }
+        
+        .combo-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--success-green);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            z-index: 2;
+        }
+        
+        .truck-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .truck-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .truck-card:hover .truck-image img {
+            transform: scale(1.1);
+        }
+        
+        .truck-info {
+            padding: 20px;
+        }
+        
+        .truck-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .truck-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--steel-grey);
+        }
+        
+        .truck-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-bottom: 15px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--steel-grey);
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+        
+        .negotiable {
+            color: var(--success-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .truck-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+        
+        .btn-secondary {
+            background-color: var(--steel-grey);
+            border-color: var(--steel-grey);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--steel-grey);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-grey);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+        }
+        
+        /* List Your Truck */
+        .list-truck {
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+        }
+        
+        .submit-btn {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #b30000;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light-grey);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--accent-red);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--highlight);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Call Now Button */
+        .call-now {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-red);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .call-now:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+            transition: right 0.3s;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .cart-sidebar.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--steel-grey);
+        }
+        
+        .cart-items {
+            margin-bottom: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--accent-red);
+            font-weight: 700;
+        }
+        
+        .remove-item {
+            color: var(--steel-grey);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cart-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--steel-grey);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .cart-sidebar {
+                width: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">DAHIYA TRUCK <span>BAZAR</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trucks.html" class="active">Trucks</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <a href="#" class="cart-icon" id="cartToggle">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>India's Largest Inventory of Commercial Vehicles</h1>
+                <p>Buy & sell pre-owned trucks with confidence. Verified listings, best prices, and expert support.</p>
+                <div class="cta-buttons">
+                    <a href="#list-truck" class="btn">List Your Truck</a>
+                    <a href="#trucks" class="btn btn-outline">Browse Listings</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Truck Brands -->
+    <section class="brands" id="brands">
+        <div class="container">
+            <h2 class="section-title">Featured Truck Brands</h2>
+            <div class="brand-grid">
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.Ij9qwXr8GeJKuOQzByTvZAHaFE&pid=Api&P=0&h=180" alt="Tata Motors">
+                    </div>
+                    <h3>Tata Motors</h3>
+                    <p>Prima, Signa, LPT, ACE</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.hVH3yXg_nmdgzDGI4ZjErgHaD-&pid=Api&P=0&h=180" alt="Ashok Leyland">
+                    </div>
+                    <h3>Ashok Leyland</h3>
+                    <p>Dost, Boss, Captain, 3718</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://www.thrustzone.com/wp-content/uploads/2021/09/Furio7-DSD-Tipper_3-truck-Range_MERGED-scaled.jpg" alt="Mahindra">
+                    </div>
+                    <h3>Mahindra</h3>
+                    <p>Blazo, Furio, Cruzio</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://www.team-bhp.com/sites/default/files/styles/check_extra_large_for_review/public/image002_0.png" alt="Eicher">
+                    </div>
+                    <h3>Eicher</h3>
+                    <p>Pro 2000, 3000, 6000</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.7lQhT2OadK4JbUmKnPRc_wHaFN&pid=Api&P=0&h=180" alt="BharatBenz">
+                    </div>
+                    <h3>BharatBenz</h3>
+                    <p>1217C, 2823C, 3528R</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.BZSEHUcpZ1mKz2GjTrvhVgAAAA&pid=Api&P=0&h=180" alt="Force Motors">
+                    </div>
+                    <h3>Force Motors</h3>
+                    <p>Trax Cruiser, Traveller</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.xxRvwv3u_yaYYbzEHv99MwHaEh&pid=Api&P=0&h=180" alt="Isuzu">
+                    </div>
+                    <h3>Isuzu</h3>
+                    <p>D-Max, N-Series</p>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.T4TzsI4ZjSO_lfmTP_SnqwHaFL&pid=Api&P=0&h=180" alt="SML Isuzu">
+                    </div>
+                    <h3>SML Isuzu</h3>
+                    <p>Sartaj GS, Samrat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Truck Listings -->
+    <section class="listings" id="trucks">
+        <div class="container">
+            <h2 class="section-title">Featured Truck Listings</h2>
+            
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label for="brand-filter">Brand:</label>
+                    <select id="brand-filter">
+                        <option value="all">All Brands</option>
+                        <option value="tata">Tata</option>
+                        <option value="ashok">Ashok Leyland</option>
+                        <option value="mahindra">Mahindra</option>
+                        <option value="eicher">Eicher</option>
+                        <option value="bharatbenz">BharatBenz</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Max Price:</label>
+                    <select id="price-filter">
+                        <option value="all">Any Price</option>
+                        <option value="5">Under ₹5 Lakh</option>
+                        <option value="10">Under ₹10 Lakh</option>
+                        <option value="20">Under ₹20 Lakh</option>
+                        <option value="30">Under ₹30 Lakh</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year-filter">Min Year:</label>
+                    <select id="year-filter">
+                        <option value="all">Any Year</option>
+                        <option value="2020">2020+</option>
+                        <option value="2018">2018+</option>
+                        <option value="2015">2015+</option>
+                        <option value="2010">2010+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <input type="text" id="search-filter" placeholder="Search trucks...">
+                </div>
+            </div>
+            
+            <div class="truck-grid">
+                <div class="truck-card">
+                    <div class="discount-badge">15% OFF</div>
+                    <div class="combo-badge">COMBO DEAL</div>
+                    <div class="truck-image">
+                        <img src="https://images.91wheels.com/assets/b_images/main/models/profile/profile1662382156.jpg" alt="Tata Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Tata Signa 5530.S</h3>
+                        <div class="truck-meta">
+                            <span>2020</span>
+                            <span>85,000 km</span>
+                            <span>Diesel</span>
+                        </div>
+                        <div class="truck-price">
+                            ₹18,50,000 <span class="original-price">₹21,75,000</span>
+                            <span class="negotiable">(Negotiable)</span>
+                        </div>
+                        <div class="truck-actions">
+                            <button class="btn btn-sm add-to-cart">Add to Cart</button>
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="discount-badge">10% OFF</div>
+                    <div class="truck-image">
+                        <img src="https://www.wiondrive.com/wp-content/uploads/2023/08/Ashok-Leyland.png" alt="Ashok Leyland Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Ashok Leyland 3718</h3>
+                        <div class="truck-meta">
+                            <span>2019</span>
+                            <span>1,20,000 km</span>
+                            <span>Diesel</span>
+                        </div>
+                        <div class="truck-price">
+                            ₹15,75,000 <span class="original-price">₹17,50,000</span>
+                            <span class="negotiable">(Negotiable)</span>
+                        </div>
+                        <div class="truck-actions">
+                            <button class="btn btn-sm add-to-cart">Add to Cart</button>
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="combo-badge">COMBO DEAL</div>
+                    <div class="truck-image">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.hHNO28VLLtkO9_BLaowqsAHaEk&pid=Api&P=0&h=180" alt="Mahindra Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Mahindra Blazo X 28</h3>
+                        <div class="truck-meta">
+                            <span>2021</span>
+                            <span>65,000 km</span>
+                            <span>Diesel</span>
+                        </div>
+                        <div class="truck-price">
+                            ₹22,90,000 
+                            <span class="negotiable">(Negotiable)</span>
+                        </div>
+                        <div class="truck-actions">
+                            <button class="btn btn-sm add-to-cart">Add to Cart</button>
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="https://www.eichertrucksandbuses.com/_next/image?url=https%3A%2F%2Fcms.eichertrucksandbuses.com%2Fuploads%2Fib%2Fexterior%2FPRO-6049TT-gallery2.jpg&w=1920&q=75" alt="Eicher Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Eicher Pro 6049</h3>
+                        <div class="truck-meta">
+                            <span>2018</span>
+                            <span>1,50,000 km</span>
+                            <span>Diesel</span>
+                        </div>
+                        <div class="truck-price">
+                            ₹14,25,000 
+                            <span class="negotiable">(Negotiable)</span>
+                        </div>
+                        <div class="truck-actions">
+                            <button class="btn btn-sm add-to-cart">Add to Cart</button>
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="discount-badge">20% OFF</div>
+                    <div class="truck-image">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2025/1/479699577/LN/IN/PM/12469657/bharatbenz-3528c-heavy-duty-trucks-500x500.jpg" alt="BharatBenz Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>BharatBenz 3528R</h3>
+                        <div class="truck-meta">
+                            <span>2017</span>
+                            <span>2,00,000 km</span>
+                            <span>Diesel</span>
+                        </div>
+                        <div class="truck-price">
+                            ₹19,99,000 <span class="original-price">₹24,99,000</span>
+                        </div>
+                        <div class="truck-actions">
+                            <button class="btn btn-sm add-to-cart">Add to Cart</button>
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/135589/trax-cruiser-exterior-right-front-three-quarter.jpeg?isig=0&q=75" alt="Force Motors Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Force Trax Cruiser</h3>
+                        <div class="truck-meta">
+                            <span>2020</span>
+                            <span>90,000 km</span>
+                            <span>Diesel</span>
+                        </div>
+                        <div class="truck-price">
+                            ₹9,50,000 
+                            <span class="negotiable">(Negotiable)</span>
+                        </div>
+                        <div class="truck-actions">
+                            <button class="btn btn-sm add-to-cart">Add to Cart</button>
+                            <button class="btn btn-sm btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Value-Added Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We ensure you get the most competitive prices in the market, with options for negotiation on most listings.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Finance Solutions</h3>
+                    <p>Special arrangements with leading banks and NBFCs for truck loans with competitive interest rates.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Route Optimization</h3>
+                    <p>Expert advice on the most profitable routes based on your cargo type - FCI, construction, or industrial.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Documentation Support</h3>
+                    <p>End-to-end assistance with RC transfer, insurance, and all legal paperwork for smooth ownership transfer.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>After-Sales Service</h3>
+                    <p>Access to our network of authorized service centers and genuine spare parts suppliers across Delhi-NCR.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Verified Sellers</h3>
+                    <p>Every listing goes through our 12-point verification process to ensure authenticity and accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>DAHIYA TRUCK BAZAR</h4>
+                    <p>India's most trusted platform for buying and selling commercial vehicles with verified listings and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="trucks.html">Truck Listings</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Truck Brands</h4>
+                    <ul>
+                        <li><a href="#">Tata Trucks</a></li>
+                        <li><a href="#">Ashok Leyland</a></li>
+                        <li><a href="#">Mahindra</a></li>
+                        <li><a href="#">Eicher</a></li>
+                        <li><a href="#">BharatBenz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> 8708503491</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> dahiyatruckbazar@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Sonipat, Haryana, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Dahiya Truck Bazar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Call Now Button -->
+    <a href="tel:8708503491" class="call-now">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <!-- Cart Sidebar -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Truck Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <p>Your cart is empty</p>
+                <a href="#trucks" class="btn">Browse Trucks</a>
+            </div>
+        </div>
+        <div class="cart-total" id="cartTotal" style="display: none;">
+            Total: ₹<span id="totalAmount">0</span>
+            <a href="checkout.html" class="btn" style="display: block; margin-top: 15px;">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Cart Functionality
+        const cartToggle = document.getElementById('cartToggle');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const overlay = document.getElementById('overlay');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const totalAmount = document.getElementById('totalAmount');
+        
+        let cart = [];
+        
+        cartToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+        
+        // Add to Cart Functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const truckCard = button.closest('.truck-card');
+                const title = truckCard.querySelector('h3').textContent;
+                const priceText = truckCard.querySelector('.truck-price').textContent;
+                const price = parseFloat(priceText.match(/₹([\d,]+)/)[1].replace(/,/g, ''));
+                const image = truckCard.querySelector('.truck-image img').src;
+                
+                const truck = {
+                    title,
+                    price,
+                    image
+                };
+                
+                cart.push(truck);
+                updateCart();
+                
+                // Show cart sidebar when item is added
+                cartSidebar.classList.add('active');
+                overlay.classList.add('active');
+            });
+        });
+        
+        function updateCart() {
+            // Update cart count
+            cartCount.textContent = cart.length;
+            
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <p>Your cart is empty</p>
+                        <a href="#trucks" class="btn">Browse Trucks</a>
+                    </div>
+                `;
+                cartTotal.style.display = 'none';
+            } else {
+                cartItems.innerHTML = '';
+                let total = 0;
+                
+                cart.forEach((item, index) => {
+                    total += item.price;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.title}">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.title}</div>
+                            <div class="cart-item-price">₹${item.price.toLocaleString()}</div>
+                        </div>
+                        <button class="remove-item" data-index="${index}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    
+                    cartItems.appendChild(cartItem);
+                });
+                
+                // Add remove item event listeners
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        cart.splice(index, 1);
+                        updateCart();
+                    });
+                });
+                
+                // Update total
+                totalAmount.textContent = total.toLocaleString();
+                cartTotal.style.display = 'block';
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('show');
+                    
+                    // Close cart if open
+                    cartSidebar.classList.remove('active');
+                    overlay.classList.remove('active');
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

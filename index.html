@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India's Trusted Truck Marketplace | Buy & Sell All Indian Trucks</title>
+    <meta name="description" content="India's premier platform for buying and selling trucks including Tata, Ashok Leyland, Mahindra, Eicher, and BharatBenz. Fast deals with trusted network of verified sellers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #1a4b8c;
+            --accent-red: #cc0000;
+            --steel-grey: #4d4d4d;
+            --light-grey: #f2f2f2;
+            --highlight: #ffcc00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-red);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--highlight);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.logisticsinsider.in/wp-content/uploads/2020/05/trucky-1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-red);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-blue);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--light-grey);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Truck Categories */
+        .categories {
+            padding: 80px 0;
+        }
+        
+        .truck-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .truck-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .truck-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .truck-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .truck-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .truck-card:hover .truck-image img {
+            transform: scale(1.1);
+        }
+        
+        .truck-info {
+            padding: 20px;
+        }
+        
+        .truck-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-grey);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-red);
+            margin-bottom: 20px;
+        }
+        
+        /* List Your Truck */
+        .list-truck {
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+        }
+        
+        .submit-btn {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #b30000;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-grey);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            color: var(--accent-red);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--highlight);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Call Now Button */
+        .call-now {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-red);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .call-now:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">DAHIYA<span>Truck-Bazar</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trucks.html">Trucks</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>India's Trusted Truck Marketplace</h1>
+                <p>Connecting buyers & dealers across the transport sector with verified listings and fast deals</p>
+                <div class="cta-buttons">
+                    <a href="#list-truck" class="btn">List Your Truck</a>
+                    <a href="#categories" class="btn btn-outline">Browse Listings</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Our Truck Network</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>With over 15 years of experience in the commercial vehicle industry, we've built India's most reliable platform for buying and selling trucks. Our network spans across Delhi-NCR and connects thousands of truck owners, dealers, and transport companies.</p>
+                    <p>What sets us apart is our commitment to verified listings, transparent pricing, and personalized service. Whether you're looking to buy your first truck or expand your fleet, we provide expert guidance every step of the way.</p>
+                    <p>Ranbir Singh Dahiya, our lead consultant with Tata Motors Finance since 2006, brings unparalleled expertise in truck financing, bank settlements, and route optimization for various cargo types including food grains, construction materials, and factory products.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.8cygZXlgkqJlWKkPeS5lSAHaEo&pid=Api&P=0&h=180" alt="Indian trucks on highway">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Truck Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">From Tata to BharatBenz — We've Got It All</h2>
+            <div class="truck-grid">
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="https://www.tatamotors.com/wp-content/uploads/2023/11/Tata-Prima-5530.S-1.jpg" alt="Tata Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Tata Trucks</h3>
+                        <p>Prima, Signa, LPT & more</p>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.0kFcOnocCLmLv1WSVKeKrwHaEu&pid=Api&P=0&h=180" alt="Ashok Leyland Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Ashok Leyland</h3>
+                        <p>Captain, Partner, 3718 & more</p>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.MOCMd8OPsfiEkjGCSWxZfAHaE4&pid=Api&P=0&h=180" alt="Mahindra Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Mahindra</h3>
+                        <p>Blazo, Furio, Cruzado & more</p>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="https://cms.eichertrucksandbuses.com/uploads/truck/exterior/2698728a9614d7af89d2c9a38b31580b.jpg" alt="Eicher Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>Eicher</h3>
+                        <p>Pro 2000, Pro 3000 series</p>
+                    </div>
+                </div>
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.9oML09O-Dm7cNVDJKbOCEAHaEl&pid=Api&P=0&h=180" alt="BharatBenz Truck">
+                    </div>
+                    <div class="truck-info">
+                        <h3>BharatBenz</h3>
+                        <p>Heavy duty haulage trucks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Comprehensive Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trusted Deals</h3>
+                    <p>Verified sellers and transparent pricing ensure you get the best value for your money with complete peace of mind.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Finance Solutions</h3>
+                    <p>Expert guidance on truck loans, bank settlements, and reducing penalties for delayed payments.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Route Optimization</h3>
+                    <p>Specialized advice for different cargo types - food grains, construction materials, FCI supplies and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- List Your Truck -->
+    <section class="list-truck" id="list-truck">
+        <div class="container">
+            <h2 class="section-title">List Your Truck For Sale</h2>
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="truck-make">Truck Make</label>
+                        <select id="truck-make" required>
+                            <option value="">Select Make</option>
+                            <option value="tata">Tata</option>
+                            <option value="ashok">Ashok Leyland</option>
+                            <option value="mahindra">Mahindra</option>
+                            <option value="eicher">Eicher</option>
+                            <option value="bharatbenz">BharatBenz</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="truck-model">Truck Model</label>
+                        <input type="text" id="truck-model" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="truck-year">Year of Manufacture</label>
+                        <input type="number" id="truck-year" min="2000" max="2023" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="truck-kms">Kilometers Driven</label>
+                        <input type="number" id="truck-kms" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="truck-price">Expected Price (₹)</label>
+                        <input type="number" id="truck-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="truck-location">Current Location</label>
+                        <input type="text" id="truck-location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seller-name">Your Name</label>
+                        <input type="text" id="seller-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seller-phone">Phone Number</label>
+                        <input type="tel" id="seller-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="truck-images">Upload Truck Images (Max 5)</label>
+                        <input type="file" id="truck-images" multiple accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="additional-info">Additional Information</label>
+                        <textarea id="additional-info"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Listing</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Sold my Tata 407 within 3 days through TruckDeal. Got a better price than I expected and the whole process was smooth."</p>
+                    <p class="testimonial-author">- Harpreet Singh, Faridabad</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Ranbir ji helped me negotiate a great deal on a used Ashok Leyland truck and even arranged favorable financing terms."</p>
+                    <p class="testimonial-author">- Rajesh Kumar, Ghaziabad</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As a small transporter, finding reliable trucks was always a challenge. Now I regularly buy through this platform with confidence."</p>
+                    <p class="testimonial-author">- Sunil Sharma, Noida</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Ranbir Singh Dahiya</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                            <span>8708503491</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                            <span>truckdeal@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>Delhi-NCR Office</span>
+                        </div>
+                    </div>
+                    <h3>Expert Advice On:</h3>
+                    <ul>
+                        <li><i class="fas fa-check" style="color: var(--accent-red); margin-right: 10px;"></i> Truck Buying/Selling Strategies</li>
+                        <li><i class="fas fa-check" style="color: var(--accent-red); margin-right: 10px;"></i> Loan Payment Solutions</li>
+                        <li><i class="fas fa-check" style="color: var(--accent-red); margin-right: 10px;"></i> Bank Settlement Guidance</li>
+                        <li><i class="fas fa-check" style="color: var(--accent-red); margin-right: 10px;"></i> Route Optimization (Food, Construction, FCI)</li>
+                        <li><i class="fas fa-check" style="color: var(--accent-red); margin-right: 10px;"></i> Connections with Major Transporters</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject">
+                                <option value="buying">I want to buy a truck</option>
+                                <option value="selling">I want to sell my truck</option>
+                                <option value="finance">Loan/Finance query</option>
+                                <option value="advice">Route/Business advice</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>TRUCKDEAL</h4>
+                    <p>India's most trusted platform for buying and selling commercial vehicles with verified listings and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#categories">Truck Listings</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Truck Brands</h4>
+                    <ul>
+                        <li><a href="#">Tata Trucks</a></li>
+                        <li><a href="#">Ashok Leyland</a></li>
+                        <li><a href="#">Mahindra</a></li>
+                        <li><a href="#">Eicher</a></li>
+                        <li><a href="#">BharatBenz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> 8708503491</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> truckdeal@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Delhi-NCR, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 TruckDeal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Call Now Button -->
+    <a href="tel:8708503491" class="call-now">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
