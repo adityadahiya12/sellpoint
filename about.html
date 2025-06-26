@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dahiya Truck Bazar | India's Trusted Truck Marketplace</title>
+    <meta name="description" content="Learn about Dahiya Truck Bazar - Sonipat's premier platform for buying and selling commercial vehicles. Our story, services, and commitment to the Indian transport industry.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #1a4b8c;
+            --accent-red: #cc0000;
+            --steel-grey: #4d4d4d;
+            --light-grey: #f2f2f2;
+            --highlight: #ffcc00;
+            --dark-orange: #ff6600;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-red);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--highlight);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2018/09/07/Photos/Processed/Rivigo2-k1PF--621x414@LiveMint.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .about-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        /* About Content Sections */
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-red);
+            margin: 15px auto 0;
+        }
+        
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .founder-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .founder-image {
+            flex: 1;
+            max-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .founder-info {
+            flex: 2;
+        }
+        
+        .founder-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--steel-grey);
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-red);
+        }
+        
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service-item {
+            background-color: var(--light-grey);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .service-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-item h3 i {
+            margin-right: 10px;
+            color: var(--accent-red);
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: 2px solid var(--accent-red);
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--highlight);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Call Now Button */
+        .call-now {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-red);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .call-now:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .founder-section {
+                flex-direction: column;
+            }
+            
+            .founder-image {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .about-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">DAHIYA<span>Truck-Bazar</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="trucks.html">Trucks</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1>Our Journey in Revolutionizing Truck Commerce</h1>
+                <p>Connecting India's transport sector with trust and transparency since 2015</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Dahiya Truck Bazar</h2>
+                
+                <p>Dahiya Truck Bazar was founded with a singular mission: to revolutionize the way trucks are bought and sold in India. Born in Sonipat, Haryana, we've grown to become one of North India's most trusted platforms for commercial vehicle transactions, serving truck owners, fleet operators, and transport businesses across the region.</p>
+                
+                <p>At our core, we're more than just a marketplace - we're a community built on reliability, efficiency, and transparency. We understand the challenges of the Indian transport sector, and we've created a platform that addresses the fragmentation and trust issues that have long plagued truck commerce.</p>
+                
+                <div class="founder-section">
+                    <div class="founder-image">
+                        <img src="ranbir singh pic..jpg" alt="Ranbir Singh Dahiya - Founder">
+                    </div>
+                    <div class="founder-info">
+                        <h2>Our Founder's Vision</h2>
+                        <blockquote class="founder-quote">
+                            "After 15 years in the commercial vehicle finance industry, I saw firsthand the challenges truck owners face when buying or selling their vehicles. The process was opaque, inefficient, and often left both parties dissatisfied. I founded Dahiya Truck Bazar to create a platform where transactions could happen with complete transparency, fair valuations, and genuine trust - the way business should be conducted in our industry."
+                        </blockquote>
+                        <p>Ranbir Singh Dahiya, our founder, brings unparalleled expertise from his tenure with Tata Motors Finance since 2006. His deep understanding of truck financing, bank settlements, and route optimization has shaped our company's commitment to providing comprehensive solutions that go beyond simple buying and selling.</p>
+                        <p>Under his leadership, Dahiya Truck Bazar has grown from a local Sonipat operation to a regional leader, known for our integrity and customer-first approach in the North Indian transport sector.</p>
+                    </div>
+                </div>
+                
+                <h2>How We Serve You</h2>
+                <p>We offer a complete ecosystem for truck commerce, designed to meet every need of buyers and sellers in the Indian transport industry:</p>
+                
+                <div class="services-list">
+                    <div class="service-item">
+                        <h3><i class="fas fa-truck"></i> Seamless Truck Listings</h3>
+                        <p>Our easy-to-use platform allows sellers to create detailed listings with high-quality images and complete specifications, ensuring maximum visibility for your vehicle.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-warehouse"></i> Extensive Truck Inventory</h3>
+                        <p>Browse hundreds of verified trucks across all major Indian brands - Tata, Ashok Leyland, Mahindra, Eicher, and BharatBenz - all categorized for easy searching.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-user-shield"></i> Verified Network</h3>
+                        <p>Every buyer and seller undergoes our rigorous verification process, giving you peace of mind in every transaction.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-comments"></i> Direct Communication</h3>
+                        <p>Our secure messaging system allows for efficient negotiation between buyers and sellers without unnecessary intermediaries.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-search"></i> "Request a Truck" Service</h3>
+                        <p>Can't find what you're looking for? Our team will actively source specific trucks to meet your exact requirements.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-rupee-sign"></i> Valuation Assistance</h3>
+                        <p>Get expert guidance on fair market value for your truck based on current market trends and vehicle condition.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-file-contract"></i> Documentation Support</h3>
+                        <p>We provide complete advisory on all paperwork required for ownership transfers and other legal requirements.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-hand-holding-usd"></i> Financial Facilitation</h3>
+                        <p>Through our banking partnerships, we can connect you with competitive financing options for your purchase.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-chart-line"></i> Market Insights</h3>
+                        <p>Stay informed with our regular reports on industry trends, pricing fluctuations, and demand patterns.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3><i class="fas fa-tools"></i> After-Sales Support</h3>
+                        <p>Our relationships with service centers and spare parts providers help you maintain your vehicle post-purchase.</p>
+                    </div>
+                </div>
+                
+                <h2>Insights from the Road Ahead</h2>
+                <p>Our blog provides expert articles and industry insights to help you make informed decisions about your trucking business:</p>
+                
+                <div class="blog-posts">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://images.91wheels.com/cv_blog/wp-content/uploads/2022/09/Tata-5W30-synthetic-engine-oil.jpg?width=800" alt="Tata Truck">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Choosing the Right Engine Oil for Your Tata Truck</h3>
+                            <p>A comprehensive guide to selecting and maintaining the optimal engine oil for different Tata truck models and operating conditions.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://www.thrustzone.com/wp-content/uploads/2022/08/Ashok-Leyland-Launches-13.5m-Bus-Chassis-At-Prawaas-3.0-1024x683.jpg" alt="Ashok Leyland Truck">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Navigating Emission Norms: BS6 for Ashok Leyland</h3>
+                            <p>Understanding how the latest emission standards impact your Ashok Leyland fleet's performance and maintenance requirements.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="http://commercialvehicle.in/wp-content/uploads/2017/01/start-img-20161214_141518.jpg" alt="Mahindra Truck">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Maximizing Resale Value for Your Mahindra</h3>
+                            <p>Practical tips to maintain and present your Mahindra pick-up truck to command the best price in the used vehicle market.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://autobahntrucking.com/storage/app/blogs/bharat-benz-e-canter-electric-truck.webp" alt="Electric Truck">
+                        </div>
+                        <div class="blog-content">
+                            <h3>The Future of Trucking: Electric Vehicles</h3>
+                            <p>Exploring the emerging landscape of electric commercial vehicles in India and what it means for fleet operators.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://tse4.mm.bing.net/th?id=OIP.l6BwrEhLZjMhgzC0VcBNogHaEM&pid=Api&P=0&h=180" alt="BharatBenz Truck">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Essential Insurance for Your BharatBenz</h3>
+                            <p>A breakdown of must-have insurance policies and coverage options for BharatBenz truck owners.</p>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="https://smartroutes.io/img/2023/features/fleet-tracking-green.png" alt="Fleet Management">
+                        </div>
+                        <div class="blog-content">
+                            <h3>Fleet Management Software Solutions</h3>
+                            <p>How modern technology is revolutionizing efficiency and profitability for Indian transport businesses.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h2>Our Commitment to You</h2>
+                    <p>At Dahiya Truck Bazar, we're dedicated to fostering a thriving, trustworthy ecosystem for the Indian transport industry. Whether you're a first-time buyer, seasoned fleet operator, or looking to sell your truck, we're here to make the process seamless, transparent, and rewarding.</p>
+                    <a href="contact.html" class="btn">Join Our Network Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>DAHIYA TRUCK BAZAR</h4>
+                    <p>India's most trusted platform for buying and selling commercial vehicles with verified listings and expert guidance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="trucks.html">Truck Listings</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Truck Brands</h4>
+                    <ul>
+                        <li><a href="https://trucks.tatamotors.com/">Tata Trucks</a></li>
+                        <li><a href="https://www.ashokleyland.com/">Ashok Leyland</a></li>
+                        <li><a href="https://www.mahindratruckandbus.com/">Mahindra</a></li>
+                        <li><a href="https://www.eichertrucksandbuses.com/">Eicher</a></li>
+                        <li><a href="https://www.eichertrucksandbuses.com/">BharatBenz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> 8708503491</li>
+                        <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> dahiyatruckbazar@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Sonipat, Haryana, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Dahiya Truck Bazar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Call Now Button -->
+    <a href="tel:8708503491" class="call-now">
+        <i class="fas fa-phone-alt"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
